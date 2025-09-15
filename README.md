@@ -1,5 +1,19 @@
 # FinOps Monthly Review
 
+> ⚠️ **WARNING: VIBE CODED PROJECT** ⚠️
+>
+> This project was rapidly prototyped and "vibe coded" without following proper software engineering practices.
+> It may contain:
+> - Untested code paths
+> - Security vulnerabilities
+> - Performance issues
+> - Inconsistent coding patterns
+> - Missing error handling
+> - Incomplete documentation
+>
+> **USE AT YOUR OWN RISK** - This is intended for experimentation and learning purposes only.
+> Do not use in production environments without thorough review, testing, and security auditing.
+
 A web application for comparing AWS monthly costs between the last two full months to help teams track consumption growth, decreases, and changes.
 
 ## Features
