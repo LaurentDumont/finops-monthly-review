@@ -1,0 +1,294 @@
+:root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-muted: #888888;
+    --border-color: #404040;
+    --card-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+    --header-bg: #1a472a;
+    --header-text: #ffffff;
+
+    --status-new-bg: #1a3a40;
+    --status-new-border: #17a2b8;
+    --status-increased-bg: #3d1a1f;
+    --status-increased-border: #dc3545;
+    --status-decreased-bg: #1f3d26;
+    --status-decreased-border: #28a745;
+    --status-unchanged-bg: #3d3419;
+    --status-unchanged-border: #ffc107;
+    --status-removed-bg: #2a2a2a;
+    --status-removed-border: #6c757d;
+}
+
+[data-theme="light"] {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+    --card-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --header-bg: #0d6efd;
+    --header-text: #ffffff;
+
+    --status-new-bg: #d1ecf1;
+    --status-new-border: #17a2b8;
+    --status-increased-bg: #f8d7da;
+    --status-increased-border: #dc3545;
+    --status-decreased-bg: #d4edda;
+    --status-decreased-border: #28a745;
+    --status-unchanged-bg: #fff3cd;
+    --status-unchanged-border: #ffc107;
+    --status-removed-bg: #e2e3e5;
+    --status-removed-border: #6c757d;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card {
+    border: none;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    box-shadow: var(--card-shadow);
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.status-new {
+    background-color: var(--status-new-bg) !important;
+    border-left: 4px solid var(--status-new-border);
+}
+
+.status-increased {
+    background-color: var(--status-increased-bg) !important;
+    border-left: 4px solid var(--status-increased-border);
+}
+
+.status-decreased {
+    background-color: var(--status-decreased-bg) !important;
+    border-left: 4px solid var(--status-decreased-border);
+}
+
+.status-unchanged {
+    background-color: var(--status-unchanged-bg) !important;
+    border-left: 4px solid var(--status-unchanged-border);
+}
+
+.status-removed {
+    background-color: var(--status-removed-bg) !important;
+    border-left: 4px solid var(--status-removed-border);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.badge-new {
+    background-color: #17a2b8;
+}
+
+.badge-increased {
+    background-color: #dc3545;
+}
+
+.badge-decreased {
+    background-color: #28a745;
+}
+
+.badge-unchanged {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.badge-removed {
+    background-color: #6c757d;
+}
+
+.cost-positive {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.cost-negative {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.cost-neutral {
+    color: #6c757d;
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+.table-responsive {
+    max-height: 70vh;
+}
+
+.service-name {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.cost-amount {
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+}
+
+header {
+    border-radius: 0 0 0.5rem 0.5rem;
+    background-color: var(--header-bg) !important;
+    color: var(--header-text) !important;
+    transition: background-color 0.3s ease;
+}
+
+.table {
+    color: var(--text-primary);
+    background-color: transparent;
+}
+
+.table th {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
+    border-top: none;
+}
+
+.table td {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    border-top: none;
+}
+
+.table tbody tr {
+    background-color: var(--bg-secondary);
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+
+/* Review Mode Styles */
+.review-mode .table tbody tr {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.review-mode .table tbody tr.review-active {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    transform: scale(1.02);
+    z-index: 10;
+    position: relative;
+}
+
+.review-mode .table tbody tr.review-completed {
+    opacity: 0.7;
+    background-color: var(--status-decreased-bg) !important;
+}
+
+.review-action-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+/* Modal Dark Mode Support */
+.modal-content {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.modal-header {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-body {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.modal-footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-title {
+    color: var(--text-primary);
+}
+
+.form-label {
+    color: var(--text-primary);
+}
+
+.form-control {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.form-control:focus {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.form-control::placeholder {
+    color: var(--text-muted);
+}
+
+.btn-close {
+    filter: var(--bs-btn-close-white-filter, none);
+}
+
+[data-theme="light"] .btn-close {
+    filter: none;
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Search functionality */
+.input-group-text {
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.table tbody tr.search-hidden {
+    display: none;
+}
+
+.alert {
+    border-radius: 0.5rem;
+}
+
+.btn {
+    border-radius: 0.375rem;
+    font-weight: 500;
+}
